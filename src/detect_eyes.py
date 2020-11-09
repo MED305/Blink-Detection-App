@@ -5,7 +5,6 @@ import matplotlib.pylab as plt
 import copy
 import pathlib
 
-
 image = cv.imread("data/img/test_image.jpg")
 imageIN = cv.cvtColor(image, cv.COLOR_BGR2RGB)
 
