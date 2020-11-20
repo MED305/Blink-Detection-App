@@ -37,12 +37,14 @@ while(capture.isOpened()):
     for (x, y, w, h) in faces:
         for i in range(h):
             for j in range(w):
-                if (image[i + y, j + x, 0] > 100):
+                if (image[i + y, j + x, 0] > 5 and image[i + y, j + x, 0] < 100 and image[i + y, j + x, 1] < 80 and image[i + y, j + x, 2] > 60):
                     image[i + y, j + x, :] = 255
-        cv.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+
+        newImage = cv.cvtColor(image, cv.COLOR_HSV2BGR)
+        cv.rectangle(newImage, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
     print("Found {0} faces!".format(len(faces)))
 
-    cv.imshow("Hector", image)
+    cv.imshow("Hector", newImage)
     if cv.waitKey(1) & 0xFF == ord('q'):
         break
