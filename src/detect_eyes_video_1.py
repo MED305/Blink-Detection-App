@@ -7,8 +7,7 @@ import matplotlib.pylab as plt
 import copy
 import pathlib
 
-
-cap = cv2.VideoCapture('data/vid/heccevidCropped.mov')
+cap = cv2.VideoCapture('data/vid/asgervid.mp4')
 
 while(cap.isOpened()):
     red = 0
