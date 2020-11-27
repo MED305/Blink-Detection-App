@@ -1,7 +1,7 @@
 import numpy as np
 import cv2 as cv
 
-capture = cv.VideoCapture('data/vid/asgervid.mp4')
+capture = cv.VideoCapture('data/vid/video2.mp4')
 
 # Get user supplied values
 cascPath = "haarcascade_frontalface_default.xml"
@@ -37,7 +37,7 @@ while(capture.isOpened()):
     for (x, y, w, h) in faces:
         for i in range(h):
             for j in range(w):
-                if (image[i + y, j + x, 0] > 5 and image[i + y, j + x, 0] < 100 and image[i + y, j + x, 1] < 80 and image[i + y, j + x, 2] > 60):
+                if (image[i + y, j + x, 0] < 300 and image[i + y, j + x, 0] > 260 and image[i + y, j + x, 1] < 20 and image[i + y, j + x, 2] > 60):
                     image[i + y, j + x, :] = 255
 
         newImage = cv.cvtColor(image, cv.COLOR_HSV2BGR)

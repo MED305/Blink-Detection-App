@@ -8,7 +8,7 @@ import copy
 import pathlib
 
 
-cap = cv2.VideoCapture('heccevidCropped.mov')
+cap = cv2.VideoCapture('video1cropped.mov')
 
 while(cap.isOpened()):
     ret, frame = cap.read()
