@@ -6,9 +6,10 @@ from PIL import Image
 import matplotlib.pylab as plt
 import copy
 import pathlib
+import time
 
-
-cap = cv2.VideoCapture('video1cropped.mov')
+starttime = time.time()
+cap = cv2.VideoCapture("data/vid/video1cropped.mov")
 
 while(cap.isOpened()):
     ret, frame = cap.read()
@@ -26,3 +27,4 @@ while(cap.isOpened()):
         break
 cap.release()
 cv2.destroyAllWindows()
+print((time.time() - starttime))
