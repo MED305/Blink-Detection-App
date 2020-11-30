@@ -1,11 +1,12 @@
 import numpy as np
 import cv2 as cv
-import copy
 from PIL import Image
 import matplotlib.pylab as plt
+import copy
+import pathlib
 
-image = cv.imread("data/img/test_image_open.jpg")
-imageIN = copy.copy(image)
+image = cv.imread("data/img/test_image.jpg")
+imageIN = cv.cvtColor(image, cv.COLOR_BGR2RGB)
 
 eye = 0
 
@@ -13,8 +14,8 @@ for y in range(imageIN.shape[0]):
     for x in range(imageIN.shape[1]):
         for c in range(3):
 
-            white = ((imageIN[y, x, 0] / 3) + (imageIN[y, x, 1] / 3) +
-                     (imageIN[y, x, 2] / 3))
+            white = (imageIN[y, x, 0] + imageIN[y, x, 1] +
+                     imageIN[y, x, 2]) / 3
 
             if(imageIN[y, x, 0] + 5 > white and image[y, x, 0] - 5 < white):  # finder øjne
                 if(imageIN[y, x, 1] + 5 > white and image[y, x, 1] - 5 < white):
@@ -34,5 +35,5 @@ if(eye > 1000 and eye < 10000):
 if(eye > 10000):
     print("Something might have went wrong")
 
-cv.imshow("My image", imageIN)
-waitKey = cv.waitKey(0)
+
+cv.imshow(imageIN)
