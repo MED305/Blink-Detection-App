@@ -1,0 +1,184 @@
+1606749229.7096758: eyes are open
+Number of detected pixels: 19209
+Time: 21.34737992286682
+ 
+1606749249.2225661: eyes are open
+Number of detected pixels: 19148
+Time: 40.43655061721802
+ 
+1606749268.8548305: eyes are open
+Number of detected pixels: 19103
+Time: 60.06880784034729
+ 
+1606749287.5015755: eyes are open
+Number of detected pixels: 19068
+Time: 78.71555233001709
+ 
+1606749306.054357: eyes are open
+Number of detected pixels: 18643
+Time: 97.26933479309082
+ 
+1606749324.7433057: eyes are open
+Number of detected pixels: 18526
+Time: 115.95729112625122
+ 
+1606749343.1950545: eyes are open
+Number of detected pixels: 18539
+Time: 134.41003394126892
+ 
+1606749361.7555885: eyes are open
+Number of detected pixels: 18361
+Time: 152.96857476234436
+ 
+1606749380.242749: eyes are open
+Number of detected pixels: 19020
+Time: 171.45873475074768
+ 
+1606749399.5135837: eyes are open
+Number of detected pixels: 19206
+Time: 190.7286057472229
+ 
+1606749418.5851965: eyes are open
+Number of detected pixels: 19344
+Time: 209.7982165813446
+ 
+1606749437.0303986: eyes are open
+Number of detected pixels: 19187
+Time: 228.2443826198578
+ 
+1606749456.510217: eyes are open
+Number of detected pixels: 19054
+Time: 247.72519946098328
+ 
+1606749475.5981207: eyes are open
+Number of detected pixels: 19068
+Time: 266.81210923194885
+ 
+1606749499.1878302: eyes are open
+Number of detected pixels: 19240
+Time: 290.41106605529785
+ 
+1606749568.6197376: eyes are open
+Number of detected pixels: 19205
+Time: 359.85050559043884
+ 
+1606749621.7214103: eyes are open
+Number of detected pixels: 18965
+Time: 412.9343993663788
+ 
+1606749637.95029: eyes are open
+Number of detected pixels: 19184
+Time: 429.1642818450928
+ 
+1606749654.1356845: eyes are open
+Number of detected pixels: 19061
+Time: 445.35366106033325
+ 
+1606749668.9393768: eyes are open
+Number of detected pixels: 19270
+Time: 460.1523599624634
+ 
+1606749683.747181: eyes are open
+Number of detected pixels: 19497
+Time: 474.96113538742065
+ 
+1606749698.4304893: eyes are open
+Number of detected pixels: 19519
+Time: 489.64448261260986
+ 
+1606749713.0823941: eyes are open
+Number of detected pixels: 19464
+Time: 504.29638028144836
+ 
+1606749727.1112044: eyes are open
+Number of detected pixels: 19283
+Time: 518.3251888751984
+ 
+1606749741.5387464: eyes are open
+Number of detected pixels: 19521
+Time: 532.7517416477203
+ 
+1606749755.8188374: eyes are open
+Number of detected pixels: 19675
+Time: 547.0328228473663
+ 
+1606749770.8094316: eyes are open
+Number of detected pixels: 19822
+Time: 562.0224268436432
+ 
+1606749787.794353: eyes are open
+Number of detected pixels: 19780
+Time: 579.0073421001434
+ 
+1606749804.9982152: eyes are open
+Number of detected pixels: 20109
+Time: 596.2112123966217
+ 
+1606749821.728947: eyes are open
+Number of detected pixels: 19927
+Time: 612.9439313411713
+ 
+1606749838.7036283: eyes are open
+Number of detected pixels: 19786
+Time: 629.9176070690155
+ 
+1606749855.4306793: eyes are open
+Number of detected pixels: 19913
+Time: 646.6456656455994
+ 
+1606749874.2528083: eyes are open
+Number of detected pixels: 20000
+Time: 665.4667963981628
+ 
+1606749892.301759: eyes are open
+Number of detected pixels: 19862
+Time: 683.516743183136
+ 
+1606749911.144975: eyes are open
+Number of detected pixels: 19681
+Time: 702.3599591255188
+ 
+1606749928.3190522: eyes are open
+Number of detected pixels: 19632
+Time: 719.5340065956116
+ 
+1606749944.9621608: eyes are open
+Number of detected pixels: 19735
+Time: 736.1751828193665
+ 
+1606749959.5448074: eyes are open
+Number of detected pixels: 19774
+Time: 750.7577967643738
+ 
+1606749974.0439382: eyes are open
+Number of detected pixels: 19191
+Time: 765.256959438324
+ 
+1606749988.342047: eyes are open
+Number of detected pixels: 18779
+Time: 779.5560350418091
+ 
+1606750002.6230903: eyes are open
+Number of detected pixels: 18707
+Time: 793.8360798358917
+ 
+1606750017.1970825: eyes are open
+Number of detected pixels: 18989
+Time: 808.411022901535
+ 
+1606750031.8316572: eyes are open
+Number of detected pixels: 18830
+Time: 823.0446271896362
+ 
+1606750046.423108: eyes are open
+Number of detected pixels: 18929
+Time: 837.6380360126495
+ 
+1606750061.259801: eyes are open
+Number of detected pixels: 18939
+Time: 852.4747858047485
+ 
+1606750076.1915302: eyes are open
+Number of detected pixels: 18971
+Time: 867.4055080413818
+ 

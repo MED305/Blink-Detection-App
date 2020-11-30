@@ -1,7 +1,5 @@
 import numpy as np
 import cv2
-import pandas as pd
-from skimage import io
 from PIL import Image
 import matplotlib.pylab as plt
 import copy
@@ -10,7 +8,9 @@ import time
 
 starttime = time.time()
 
-cap = cv2.VideoCapture('data/vid/video1cropped.mov')
+cap = cv2.VideoCapture('data/vid/video4.mp4')
+
+file = open("out/results_video4.txt", "w+")
 
 while(cap.isOpened()):
     red = 0
@@ -37,15 +37,16 @@ while(cap.isOpened()):
                 red += 1
 
     if (red > 2000):
-        print("eyes are open")
+        file.write(str(time.time()) + ": " + "eyes are open" + "\n")
     elif (red < 2000):
-        print("eyes are closed")
+        file.write(str(time.time()) + ": " + "eyes are closed" + "\n")
 
     subtract_median = copy.copy(color)
-    print(red)
+    file.write("Number of detected pixels: " + str(red) + "\n")
     cv2.imshow("Hector", color)
     cv2.imshow("jojo", subtract)
-    print((time.time() - starttime))
+    file.write("Time: " + str((time.time() - starttime)) + "\n")
+    file.write(" " + "\n")
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
