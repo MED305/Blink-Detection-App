@@ -1,8 +1,11 @@
 import cv2
 import os
+import time
+
+starttime = time.time()
 
 
-def detectBlink(file):
+def detectBlink(file, output):
     first_read = True
 
     # Starting the video capture
@@ -45,6 +48,8 @@ def detectBlink(file):
                                 cv2.FONT_HERSHEY_PLAIN, 2,
                                 (255, 255, 255), 2)
                 else:
+                    output.write(
+                        "Time: " + str((time.time() - starttime)) + " - Blink Detected" + "\n")
                     cv2.putText(newImg,
                                 "Blink!", (70, 70),
                                 cv2.FONT_HERSHEY_PLAIN, 3,
@@ -74,6 +79,11 @@ eye_cascade = cv2.CascadeClassifier(
     'data/cascades/haarcascade_eye.xml')
 
 for file in os.listdir("data/test"):
+
+    fileName = os.path.splitext(file)[0]
+    outputPath = os.path.join("out/results2", fileName + "results.txt")
+    output = open(outputPath, "w+")
+
     if file.endswith(".mp4"):
         path = os.path.join("data/test", file)
-        detectBlink(path)
+        detectBlink(path, output)
