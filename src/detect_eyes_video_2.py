@@ -7,7 +7,8 @@ capture = cv.VideoCapture('data/vid/video2.mp4')
 cascPath = "haarcascade_frontalface_default.xml"
 
 # Create the haar cascade
-faceCascade = cv.CascadeClassifier("src/haarcascade_frontalface_default.xml")
+faceCascade = cv.CascadeClassifier(
+    "data/cascades/haarcascade_frontalface_default.xml")
 
 while(capture.isOpened()):
     label = 0
