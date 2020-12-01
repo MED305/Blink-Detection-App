@@ -1,5 +1,4 @@
 # All the imports go here
-import numpy as np
 import cv2
 
 # Initializing the face and eye cascade classifiers from xml files
@@ -18,13 +17,12 @@ ret, img = cap.read()
 while(ret):
     ret, img = cap.read()
 
+    # Scale and rotation
     scale_percent = 60
     width = int(img.shape[1] * scale_percent / 100)
     height = int(img.shape[0] * scale_percent / 100)
     dim = (width, height)
-
     rezise = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
-
     newImg = cv2.rotate(rezise, cv2.ROTATE_90_CLOCKWISE)
 
     # Coverting the recorded image to grayscale
