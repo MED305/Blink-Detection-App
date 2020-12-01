@@ -40,34 +40,18 @@ while(ret):
             roi_face = gray[y:y+h, x:x+w]
             roi_face_clr = img[y:y+h, x:x+w]
             eyes = eye_cascade.detectMultiScale(
-                roi_face, 2.5, 5, minSize=(50, 50))
+                roi_face, 2.6, 5, minSize=(50, 50))
 
-            # Examining the length of eyes object for eyes
             if(len(eyes) >= 2):
-                # Check if program is running for detection
-                if(first_read):
-                    cv2.putText(newImg,
-                                "Eye detected press s to begin",
-                                (70, 70),
-                                cv2.FONT_HERSHEY_PLAIN, 3,
-                                (0, 255, 0), 2)
-                else:
-                    cv2.putText(newImg,
-                                "Eyes open!", (70, 70),
-                                cv2.FONT_HERSHEY_PLAIN, 2,
-                                (255, 255, 255), 2)
+                cv2.putText(newImg,
+                            "Eyes open!", (70, 70),
+                            cv2.FONT_HERSHEY_PLAIN, 2,
+                            (255, 255, 255), 2)
             else:
-                if(first_read):
-                    # To ensure if the eyes are present before starting
-                    cv2.putText(newImg,
-                                "No eyes detected", (70, 70),
-                                cv2.FONT_HERSHEY_PLAIN, 3,
-                                (0, 0, 255), 2)
-                else:
-                    # This will print on console and restart the algorithm
-                    print("Blink detected--------------")
-                    cv2.waitKey(3000)
-                    first_read = True
+                cv2.putText(newImg,
+                            "Blink!", (70, 70),
+                            cv2.FONT_HERSHEY_PLAIN, 3,
+                            (0, 0, 255), 2)
 
     else:
         cv2.putText(newImg,
@@ -80,9 +64,6 @@ while(ret):
     a = cv2.waitKey(1)
     if(a == ord('q')):
         break
-    elif(a == ord('s') and first_read):
-        # This will start the detection
-        first_read = False
 
 cap.release()
 cv2.destroyAllWindows()
