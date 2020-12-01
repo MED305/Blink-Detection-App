@@ -8,7 +8,7 @@ import time
 
 starttime = time.time()
 
-cap = cv2.VideoCapture('data/vid/video4.mp4')
+cap = cv2.VideoCapture('data/vid/video2.mp4')
 
 file = open("out/results_video4.txt", "w+")
 

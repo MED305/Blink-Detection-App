@@ -6,7 +6,7 @@ import cv2
 face_cascade = cv2.CascadeClassifier(
     'data/cascades/haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier(
-    'data/cascades/haarcascade_eye_tree_eyeglasses.xml')
+    'data/cascades/haarcascade_eye.xml')
 
 # Variable store execution state
 first_read = True
