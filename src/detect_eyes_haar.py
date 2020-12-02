@@ -2,13 +2,12 @@ import cv2
 import os
 import time
 
-starttime = time.time()
-
 
 def detectBlink(file, output):
+    starttime = time.time()
+
     first_read = True
 
-    # Starting the video capture
     cap = cv2.VideoCapture(file)
 
     while(cap.isOpened()):
@@ -17,26 +16,20 @@ def detectBlink(file, output):
         if not ret:
             break
 
-        # Scale and rotation
         scale_percent = 60
         width = int(img.shape[1] * scale_percent / 100)
         height = int(img.shape[0] * scale_percent / 100)
         dim = (width, height)
-        rezise = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
-        newImg = cv2.rotate(rezise, cv2.ROTATE_90_CLOCKWISE)
+        newImg = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
 
-        # Coverting the recorded image to grayscale
         gray = cv2.cvtColor(newImg, cv2.COLOR_BGR2GRAY)
-        # Applying filter to remove impurities
         gray = cv2.bilateralFilter(gray, 5, 1, 1)
 
-        # Detecting the face for region of image to be fed to eye classifier
         faces = face_cascade.detectMultiScale(gray, 1.3, 5, minSize=(200, 200))
         if(len(faces) > 0):
             for (x, y, w, h) in faces:
                 img = cv2.rectangle(newImg, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
-                # roi_face is face which is input to eye classifier
                 roi_face = gray[y:y+h, x:x+w]
                 roi_face_clr = img[y:y+h, x:x+w]
                 eyes = eye_cascade.detectMultiScale(
@@ -50,6 +43,9 @@ def detectBlink(file, output):
                 else:
                     output.write(
                         "Time: " + str((time.time() - starttime)) + " - Blink Detected" + "\n")
+                    # save frame as JPEG file
+                    fileName = os.path.splitext(file)[0]
+                    cv2.imwrite(fileName + "screenshot.bmp", newImg)
                     cv2.putText(newImg,
                                 "Blink!", (70, 70),
                                 cv2.FONT_HERSHEY_PLAIN, 3,
@@ -61,12 +57,9 @@ def detectBlink(file, output):
                         cv2.FONT_HERSHEY_PLAIN, 3,
                         (0, 255, 0), 2)
 
-        # Controlling the algorithm with keys
-        cv2.imshow('img', newImg)
+        cv2.imshow('Result', newImg)
         a = cv2.waitKey(1)
         if(a == ord('q')):
-            break
-        if(ret == False):
             break
 
     cap.release()
