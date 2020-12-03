@@ -1,2 +1,2 @@
-Time: 0.6154515743255615 - Blink Detected
-Time: 1.2705860137939453 - Blink Detected
+Time: 0.5792317390441895 - Blink Detected
+Time: 1.1249380111694336 - Blink Detected

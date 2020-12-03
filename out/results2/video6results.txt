@@ -1,6 +1,10 @@
-Time: 0.24147629737854004 - Blink Detected
-Time: 0.7077035903930664 - Blink Detected
-Time: 0.7536380290985107 - Blink Detected
-Time: 0.7960243225097656 - Blink Detected
-Time: 0.8427746295928955 - Blink Detected
-Time: 0.8956179618835449 - Blink Detected
+Time: 0.557636022567749 - Blink Detected
+Time: 0.6026053428649902 - Blink Detected
+Time: 0.6403915882110596 - Blink Detected
+Time: 0.6827316284179688 - Blink Detected
+Time: 0.7275393009185791 - Blink Detected
+Time: 1.2188875675201416 - Blink Detected
+Time: 1.2481350898742676 - Blink Detected
+Time: 1.2796926498413086 - Blink Detected
+Time: 1.7275011539459229 - Blink Detected
+Time: 1.7563581466674805 - Blink Detected
