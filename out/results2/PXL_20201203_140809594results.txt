@@ -1,0 +1,4 @@
+Time: 0.42107295989990234 - Blink Detected at: 15
+Time: 0.7128255367279053 - Blink Detected at: 31
+Time: 0.7734146118164062 - Blink Detected at: 33
+Time: 0.9122946262359619 - Blink Detected at: 40
