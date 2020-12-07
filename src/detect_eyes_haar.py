@@ -48,11 +48,12 @@ def detectBlink(file, output):
                         "Time: " + str((time.time() - starttime)) + " - Blink Detected at" + str(frame) + "\n")
                     # save frame as JPEG file
                     fileName = os.path.splitext(file)[0]
-                    cv2.imwrite(fileName + "screenshot.bmp", newImg)
                     cv2.putText(newImg,
                                 "Blink!", (70, 70),
                                 cv2.FONT_HERSHEY_PLAIN, 3,
                                 (0, 0, 255), 2)
+                    cv2.imwrite(fileName + str(frame) +
+                                "screenshot.bmp", newImg)
 
         else:
             cv2.putText(newImg,
