@@ -5,12 +5,14 @@ import time
 
 def detectBlink(file, output):
     starttime = time.time()
+    frame = 0
 
     first_read = True
 
     cap = cv2.VideoCapture(file)
 
     while(cap.isOpened()):
+        frame + 1
         ret, img = cap.read()
 
         if not ret:
@@ -21,6 +23,7 @@ def detectBlink(file, output):
         height = int(img.shape[0] * scale_percent / 100)
         dim = (width, height)
         newImg = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
+        # newImg = cv2.rotate(newImg, cv2.ROTATE_90_CLOCKWISE) Uncomment to rotate image
 
         gray = cv2.cvtColor(newImg, cv2.COLOR_BGR2GRAY)
         gray = cv2.bilateralFilter(gray, 5, 1, 1)
@@ -42,7 +45,7 @@ def detectBlink(file, output):
                                 (255, 255, 255), 2)
                 else:
                     output.write(
-                        "Time: " + str((time.time() - starttime)) + " - Blink Detected" + "\n")
+                        "Time: " + str((time.time() - starttime)) + " - Blink Detected at" + str(frame) + "\n")
                     # save frame as JPEG file
                     fileName = os.path.splitext(file)[0]
                     cv2.imwrite(fileName + "screenshot.bmp", newImg)
@@ -59,6 +62,7 @@ def detectBlink(file, output):
 
         cv2.imshow('Result', newImg)
         a = cv2.waitKey(1)
+
         if(a == ord('q')):
             break
 
