@@ -1,9 +1,11 @@
-Time: 0.5866773128509521 - Blink Detected at: 22
-Time: 0.6084725856781006 - Blink Detected at: 23
-Time: 1.8682217597961426 - Blink Detected at: 72
-Time: 1.8992159366607666 - Blink Detected at: 73
-Time: 1.9292871952056885 - Blink Detected at: 74
-Time: 1.9593050479888916 - Blink Detected at: 75
-Time: 1.991710901260376 - Blink Detected at: 76
-Time: 2.0211570262908936 - Blink Detected at: 77
-Time: 2.052401542663574 - Blink Detected at: 78
+Time: 0.5299088954925537 - Blink Detected at: 22
+Time: 0.5489015579223633 - Blink Detected at: 23
+Time: 1.5548591613769531 - Blink Detected at: 72
+Time: 1.5748531818389893 - Blink Detected at: 73
+Time: 1.5958454608917236 - Blink Detected at: 74
+Time: 1.6158392429351807 - Blink Detected at: 75
+Time: 1.6368322372436523 - Blink Detected at: 76
+Time: 1.658825397491455 - Blink Detected at: 77
+Time: 1.6828174591064453 - Blink Detected at: 78
+Time: 2.1024911403656006 - Video ended at: 100
+Face detection: 99.0

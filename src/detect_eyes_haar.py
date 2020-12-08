@@ -6,6 +6,7 @@ import time
 def detectBlink(file, output):
     starttime = time.time()
     frame = 0
+    faceFrames = 0
 
     first_read = True
 
@@ -15,7 +16,11 @@ def detectBlink(file, output):
         frame = frame + 1
         ret, img = cap.read()
 
+
         if not ret:
+            output.write(
+                        "Time: " + str((time.time() - starttime)) + " - Video ended at: " + str(frame) + "\n" + "Face detection: " + str((faceFrames/frame)*100) + "\n")
+                        
             break
 
         scale_percent = 60
@@ -31,6 +36,7 @@ def detectBlink(file, output):
 
         faces = face_cascade.detectMultiScale(gray, 1.3, 5, minSize=(200, 200))
         if(len(faces) > 0):
+            faceFrames = faceFrames + 1
             for (x, y, w, h) in faces:
                 img = cv2.rectangle(newImg, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
@@ -63,10 +69,10 @@ def detectBlink(file, output):
                         (0, 255, 0), 2)
 
         cv2.imshow('Result', newImg)
-        a = cv2.waitKey(1)
+        #a = cv2.waitKey(1)
 
-        if(a == ord('q')):
-            break
+        #if(a == ord('q')):
+            #break
 
     cap.release()
     cv2.destroyAllWindows()
