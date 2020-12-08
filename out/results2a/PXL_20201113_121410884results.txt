@@ -1,0 +1,2 @@
+Time: 1.3880484104156494 - Video ended at: 102
+Face detection: 0.0
