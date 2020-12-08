@@ -83,12 +83,12 @@ face_cascade = cv2.CascadeClassifier(
 eye_cascade = cv2.CascadeClassifier(
     'data/cascades/haarcascade_eye.xml')
 
-for file in os.listdir("data/test/DontRotate"):
+for file in os.listdir("data/test/HardDataSet/Rotate"):
 
     fileName = os.path.splitext(file)[0]
-    outputPath = os.path.join("out/results2a", fileName + "results.txt")
+    outputPath = os.path.join("out/hardresult", fileName + "results.txt")
     output = open(outputPath, "w+")
 
     if file.endswith(".mp4"):
-        path = os.path.join("data/test/DontRotate", file)
+        path = os.path.join("data/test/HardDataSet/Rotate", file)
         detectBlink(path, output)
