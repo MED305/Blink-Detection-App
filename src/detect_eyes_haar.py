@@ -29,7 +29,7 @@ def detectBlink(file, output):
         dim = (width, height)
         newImg = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
         # Uncomment to rotate image
-        #newImg = cv2.rotate(newImg, cv2.ROTATE_90_CLOCKWISE)
+        newImg = cv2.rotate(newImg, cv2.ROTATE_90_CLOCKWISE)
 
         gray = cv2.cvtColor(newImg, cv2.COLOR_BGR2GRAY)
         gray = cv2.bilateralFilter(gray, 5, 1, 1)
