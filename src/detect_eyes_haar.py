@@ -29,7 +29,7 @@ def detectBlink(file, output):
         dim = (width, height)
         newImg = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
         # Uncomment to rotate image
-        #newImg = cv2.rotate(newImg, cv2.ROTATE_90_CLOCKWISE)
+        newImg = cv2.rotate(newImg, cv2.ROTATE_90_CLOCKWISE)
 
         gray = cv2.cvtColor(newImg, cv2.COLOR_BGR2GRAY)
         gray = cv2.bilateralFilter(gray, 5, 1, 1)
@@ -83,12 +83,12 @@ face_cascade = cv2.CascadeClassifier(
 eye_cascade = cv2.CascadeClassifier(
     'data/cascades/haarcascade_eye.xml')
 
-for file in os.listdir("data/test/DontRotate"):
+for file in os.listdir("data/test/HardDataSet/Rotate"):
 
     fileName = os.path.splitext(file)[0]
-    outputPath = os.path.join("out/results2a", fileName + "results.txt")
+    outputPath = os.path.join("out/hardresult", fileName + "results.txt")
     output = open(outputPath, "w+")
 
     if file.endswith(".mp4"):
-        path = os.path.join("data/test/DontRotate", file)
+        path = os.path.join("data/test/HardDataSet/Rotate", file)
         detectBlink(path, output)
