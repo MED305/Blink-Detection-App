@@ -12,7 +12,7 @@ def detectBlink(file, output):
     cap = cv2.VideoCapture(file)
 
     while(cap.isOpened()):
-        frame + 1
+        frame = frame + 1
         ret, img = cap.read()
 
         if not ret:
@@ -23,7 +23,8 @@ def detectBlink(file, output):
         height = int(img.shape[0] * scale_percent / 100)
         dim = (width, height)
         newImg = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
-        # newImg = cv2.rotate(newImg, cv2.ROTATE_90_CLOCKWISE) Uncomment to rotate image
+        # Uncomment to rotate image
+        newImg = cv2.rotate(newImg, cv2.ROTATE_90_CLOCKWISE)
 
         gray = cv2.cvtColor(newImg, cv2.COLOR_BGR2GRAY)
         gray = cv2.bilateralFilter(gray, 5, 1, 1)
@@ -45,15 +46,15 @@ def detectBlink(file, output):
                                 (255, 255, 255), 2)
                 else:
                     output.write(
-                        "Time: " + str((time.time() - starttime)) + " - Blink Detected at" + str(frame) + "\n")
+                        "Time: " + str((time.time() - starttime)) + " - Blink Detected at: " + str(frame) + "\n")
                     # save frame as JPEG file
                     fileName = os.path.splitext(file)[0]
                     cv2.putText(newImg,
                                 "Blink!", (70, 70),
                                 cv2.FONT_HERSHEY_PLAIN, 3,
                                 (0, 0, 255), 2)
-                    cv2.imwrite(fileName + str(frame) +
-                                "screenshot.bmp", newImg)
+                    cv2.imwrite(fileName +
+                                str(frame) + ".bmp", newImg)
 
         else:
             cv2.putText(newImg,
@@ -76,12 +77,12 @@ face_cascade = cv2.CascadeClassifier(
 eye_cascade = cv2.CascadeClassifier(
     'data/cascades/haarcascade_eye.xml')
 
-for file in os.listdir("data/test"):
+for file in os.listdir("data/test/Rotate"):
 
     fileName = os.path.splitext(file)[0]
     outputPath = os.path.join("out/results2", fileName + "results.txt")
     output = open(outputPath, "w+")
 
     if file.endswith(".mp4"):
-        path = os.path.join("data/test", file)
+        path = os.path.join("data/test/Rotate", file)
         detectBlink(path, output)
