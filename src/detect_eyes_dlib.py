@@ -33,8 +33,11 @@ def detectBlink(file, output):
         ret, img = cap.read()
 
         if not ret:
-            output.write(
-                "Time: " + str((time.time() - starttime)) + " - Video ended at: " + str(frame) + "\n" + "Face detection: " + str((faceFrames/frame)*100) + "\n")
+            if (faceFrames > 1):
+                output.write("Time: " + str((time.time() - starttime)) + " - Video ended at: " + str(
+                    frame) + "\n" + "Face detection: " + str((faceFrames/frame)*100) + "\n")
+            else:
+                output.write("ERROR!: No faces detected in video")
             break
 
         scale_percent = 60
@@ -47,11 +50,11 @@ def detectBlink(file, output):
         newImg = cv2.rotate(newImg, cv2.ROTATE_90_CLOCKWISE)
         gray = cv2.cvtColor(newImg, cv2.COLOR_BGR2GRAY)
 
-        rects = detector(gray, 0)
+        faces = detector(gray, 0)
 
-        for rect in rects:
+        for face in faces:
             faceFrames = faceFrames + 1
-            shape = predictor(gray, rect)
+            shape = predictor(gray, face)
             shape = face_utils.shape_to_np(shape)
 
             leftEye = shape[lStart:lEnd]
