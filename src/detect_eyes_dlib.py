@@ -78,9 +78,9 @@ def detectBlink(file, output):
                 count = 0
 
             cv2.putText(newImg, "Blinks: {}".format(blinks), (10, 30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+                        cv2.FONT_HERSHEY_PLAIN, 0.7, (0, 0, 255), 2)
             cv2.putText(newImg, "EAR: {:.2f}".format(ear), (300, 30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+                        cv2.FONT_HERSHEY_PLAIN, 0.7, (0, 0, 255), 2)
 
         cv2.imshow("Frame", newImg)
         key = cv2.waitKey(1)
