@@ -6,7 +6,6 @@ import numpy as np
 import cv2
 import time
 import dlib
-import cv2
 import os
 
 
@@ -70,13 +69,19 @@ def detectBlink(file, output):
             cv2.drawContours(newImg, [rightEyeHull], -1, (0, 255, 0), 1)
 
             if ear < EYE_AR_THRESH:
+                output.write(
+                        "Time: " + str((time.time() - starttime)) + " - Blink Detected at: " + str(frame) + "\n")
                 count += 1
+                cv2.imwrite(fileName +
+                                str(frame) + ".bmp", newImg)
 
             else:
-                if count >= EYE_AR_CONSEC_FRAMES:
+                if count > 0:
                     blinks += 1
                     output.write(
-                        "Time: " + str((time.time() - starttime)) + " - Blink Detected at: " + str(frame) + "\n")
+                        "Time: " + str((time.time() - starttime)) + " --> Blink Ended at: " + str(frame) + "\n")
+                    cv2.imwrite(fileName +
+                                str(frame) + ".bmp", newImg)
 
                 count = 0
 
@@ -93,7 +98,7 @@ def detectBlink(file, output):
 
 
 EYE_AR_THRESH = 0.3
-EYE_AR_CONSEC_FRAMES = 3
+
 
 print("[INFO] loading facial landmark predictor...")
 detector = dlib.get_frontal_face_detector()

@@ -1,0 +1,9 @@
+Time: 0.6668038368225098 - Blink Detected at: 6
+Time: 0.7667722702026367 - Blink Detected at: 7
+Time: 0.8677451610565186 - Blink Detected at: 8
+Time: 0.9696900844573975 - Blink Detected at: 9
+Time: 1.0676770210266113 - Blink Detected at: 10
+Time: 1.1696443557739258 - Blink Detected at: 11
+Time: 1.2696151733398438 --> Blink Ended at: 12
+Time: 1.2735965251922607 - Video ended at: 13
+Face detection: 92.3076923076923
